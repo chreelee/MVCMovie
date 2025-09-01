@@ -1,21 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using MvcMovie.Models;
+using MvcMovie.Services;
 using MVCMovie.Data;
-using MVCMovie.Models;
 namespace MVCMovie
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            //  wires the context to the connection string, which config will read
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddDbContext<MvcMovieContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("MVCMovieContext") ?? throw new InvalidOperationException("Connection string 'MVCMovieContext' not found.")));
-            // above wires the context to the connection string, which config will read
-
+            builder.Services.AddDbContext<MvcMovieContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MVCMovieContext") ?? throw new InvalidOperationException("Connection string 'MVCMovieContext' not found.")));
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // add movies services
+            builder.Services.AddScoped<IMovieService, MovieService>();
+
 
             var app = builder.Build();
 
