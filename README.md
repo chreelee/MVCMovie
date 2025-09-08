@@ -3,6 +3,9 @@ Christine Lee
 COP 2839: ASP.NET Programming with C#
 Professor Castillo
 
+Week 3:
+In the Movie App application, a Features folder was created to structure the application in a Features folder architecture. Folders in Feature include Movies and HelloWorld. The MapControllerRoute for Program.cs is "{controller=Home}/{action=Index}/{id?}". In MoviesController, the route was set to "movies" and additional attributes included [HttpGet("")], [HttpGet("/details/{id:int}", Name ="MovieDetails")], [HttpGet("create")], [HttpPost("create")], [HttpGet("edit/{id:int}")], [HttpPost("edit/{id:int}")], [HttpGet("delete/{id:int}")], [HttpGet("bygenre/{genre}")], and [HttpGet("released/{year:int:min(1900)}/{month:int:range(1,12)?}")].
+
 Week 2:
 In the Movie App application, the separation concerns with the MvcMovie project were the separation of the logic in the programming, including the interactions of the program with the database. Since the logic for checking and retrieving the data were together, it makes testing and adjusting the program difficult because the logic and infrastructure were in the same program. This query logic was then separated into the IMovieService interface and MovieService class to allow each part to have a single responsibility. These classes separately handles all of the movies operations like getting a list of all the movies and adding, editing, or deleting database information from the code of the controller. To ensure it's integrity, a unit test using xunit was created to demonstrate the benefits of the improved architectural principles applied after the additional classes were incorporated into the program.
 
