@@ -1,19 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
-namespace MvcMovie.Controllers;
+namespace MvcMovie.Features.HelloWorld.Controllers;
+
+[Route("hello")]
 
 public class HelloWorldController : Controller
 {
     // base URL
-    // GET: /HelloWorld/
+    // GET: /hello/
+    [HttpGet("")]
     public IActionResult Index()
     {
         return View();
     }
     // specifies Welcome URL
-    // GET: /HelloWorld/Welcome/ 
+    // GET: /hello/welcome/John/3
     // Requires using System.Text.Encodings.Web;
+    [HttpGet("welcome/{name?}/{numTimes:int?}")]
     public IActionResult Welcome(string name, int numTimes = 1)
     {
         ViewData["Message"] = "Hello " + name;

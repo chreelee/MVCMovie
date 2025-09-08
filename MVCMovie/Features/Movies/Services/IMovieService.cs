@@ -1,9 +1,9 @@
 ﻿// interface contains all movie operations
 using System.Collections.Generic;
 using System.Threading.Tasks; // using async methods
-using MvcMovie.Models;
+using MvcMovie.Features.Movies.Models;
 
-namespace MvcMovie.Services
+namespace MvcMovie.Features.Movies.Services
 {
     public interface IMovieService // changed from class
     {

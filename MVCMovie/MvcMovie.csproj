@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
@@ -20,5 +20,9 @@
 		<None Include="Tests\**\*.cs" />
 		<None Include="obj\**\*.cs" />
 		<None Include="bin\**\*.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Services\" />
+	  <Folder Include="Views\Movies\" />
 	</ItemGroup>
 </Project>

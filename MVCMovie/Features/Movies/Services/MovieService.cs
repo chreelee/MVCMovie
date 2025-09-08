@@ -1,10 +1,10 @@
 ﻿// the class that interacts with the databases, using the interface
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using MvcMovie.Features.Movies.Models;
 using MVCMovie.Data;
 using MVCMovie.Models;
 
-namespace MvcMovie.Services
+namespace MvcMovie.Features.Movies.Services
 {
     // extends IMovieService
     public class MovieService : IMovieService

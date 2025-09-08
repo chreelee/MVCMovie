@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MvcMovie.Features.Movies.Models;
 using MVCMovie.Data;
 using System;
 using System.Linq;

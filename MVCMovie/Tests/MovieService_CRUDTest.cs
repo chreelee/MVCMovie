@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MVCMovie.Data;
 using MVCMovie.Models;
-using MvcMovie.Services;
 using MvcMovie.Models;
 using Xunit;
 using NuGet.Protocol;
+using MvcMovie.Features.Movies.Services;
+using MvcMovie.Features.Movies.Models;
 
 
 namespace Tests;
